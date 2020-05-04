@@ -10,6 +10,7 @@ func TestFindMaxConsecutiveOnes(t *testing.T) {
 	}{
 		{desc: "nil slice given, 0 returned", nums: nil, want: 0},
 		{desc: "empty slice given, 0 returned", nums: []int{}, want: 0},
+		{desc: "one element given, 0 returned", nums: []int{1}, want: 0},
 	}
 
 	for _, tc := range testCases {
