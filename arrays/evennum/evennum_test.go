@@ -10,7 +10,8 @@ func TestFindNumbers(t *testing.T) {
 	}{
 		{desc: "nil slice given, 0 returned", nums: nil, want: 0},
 		{desc: "empty slice given, 0 returned", nums: []int{}, want: 0},
-		{desc: "one even number given, 0 returned", nums: []int{0}, want: 0},
+		{desc: "one odd number of digits given, 0 returned", nums: []int{0}, want: 0},
+		//{desc: "one even number given of digits, 1 returned", nums: []int{11}, want: 1},
 	}
 
 	for _, tc := range testCases {
@@ -18,6 +19,25 @@ func TestFindNumbers(t *testing.T) {
 		t.Run(tc.desc, func(t *testing.T) {
 			t.Parallel()
 			got := findNumbers(tc.nums)
+			assertEquals(t, tc.want, got)
+		})
+	}
+}
+
+func TestDigits(t *testing.T) {
+	testCases := []struct {
+		desc string
+		num  int
+		want int
+	}{
+		{desc: "0 given, 0 returned", num: 0, want: 1},
+	}
+
+	for _, tc := range testCases {
+		tc := tc
+		t.Run(tc.desc, func(t *testing.T) {
+			t.Parallel()
+			got := digits(tc.num)
 			assertEquals(t, tc.want, got)
 		})
 	}
