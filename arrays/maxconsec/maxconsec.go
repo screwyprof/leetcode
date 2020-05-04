@@ -3,18 +3,18 @@ package maxconsec
 // findMaxConsecutiveOnes finds the maximum number of consecutive 1s in the given array.
 func findMaxConsecutiveOnes(nums []int) int {
 	var (
-		res    int
-		window []int
+		res int
+		cnt int
 	)
 	for _, n := range nums {
 		if n == 1 {
-			window = append(window, 1)
+			cnt++
 		} else {
-			res = max(res, len(window))
-			window = nil
+			res = max(res, cnt)
+			cnt = 0
 		}
 	}
-	res = max(res, len(window))
+	res = max(res, cnt)
 	return res
 }
 
