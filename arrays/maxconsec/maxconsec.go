@@ -9,6 +9,9 @@ func findMaxConsecutiveOnes(nums []int) int {
 	for _, n := range nums {
 		if n == 1 {
 			window = append(window, 1)
+		} else {
+			res = max(res, len(window))
+			window = nil
 		}
 	}
 	res = max(res, len(window))
