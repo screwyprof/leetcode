@@ -16,6 +16,7 @@ func TestFindMaxConsecutiveOnes(t *testing.T) {
 		{desc: "two consecutive 1's followed by one 0 given, 2 returned", nums: []int{1, 1, 0}, want: 2},
 		{desc: "two consecutive 1's following two 0's given, 2 returned", nums: []int{0, 0, 1, 1}, want: 2},
 		{desc: "a few non consecutive figures given, 1 returned", nums: []int{1, 0, 1, 0}, want: 1},
+		{desc: "two 1's windows given, one with 2 elements, second with 3, 3 returned ", nums: []int{1, 1, 0, 1, 1, 1}, want: 3},
 	}
 
 	for _, tc := range testCases {
