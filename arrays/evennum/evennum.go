@@ -2,7 +2,13 @@ package evennum
 
 // findNumbers returns how many of nums's elements contain an even number of digits.
 func findNumbers(nums []int) int {
-	return 0
+	var evens int
+	for _, num := range nums {
+		if digits(num)%2 == 0 {
+			evens++
+		}
+	}
+	return evens
 }
 
 func digits(n int) int {

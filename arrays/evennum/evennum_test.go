@@ -10,8 +10,9 @@ func TestFindNumbers(t *testing.T) {
 	}{
 		{desc: "nil slice given, 0 returned", nums: nil, want: 0},
 		{desc: "empty slice given, 0 returned", nums: []int{}, want: 0},
-		{desc: "one odd number of digits given, 0 returned", nums: []int{0}, want: 0},
-		//{desc: "one even number given of digits, 1 returned", nums: []int{11}, want: 1},
+		{desc: "an odd number given, 0 returned", nums: []int{1}, want: 0},
+		{desc: "an even number given, 1 returned", nums: []int{11}, want: 1},
+		{desc: "a 3 even numbers given, 3 returned", nums: []int{30, 2020, 27}, want: 3},
 	}
 
 	for _, tc := range testCases {
