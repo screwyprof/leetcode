@@ -3,19 +3,23 @@ package maxconsec
 import "testing"
 
 func TestFindMaxConsecutiveOnes(t *testing.T) {
-	t.Run("nil slice given, 0 returned", func(t *testing.T) {
-		t.Parallel()
+	testCases := []struct {
+		desc string
+		nums []int
+		want int
+	}{
+		{desc: "nil slice given, 0 returned", nums: nil, want: 0},
+		{desc: "empty slice given, 0 returned", nums: []int{}, want: 0},
+	}
 
-		got := findMaxConsecutiveOnes(nil)
-		assertEquals(t, 0, got)
-	})
-
-	t.Run("empty slice given, 0 returned", func(t *testing.T) {
-		t.Parallel()
-
-		got := findMaxConsecutiveOnes([]int{})
-		assertEquals(t, 0, got)
-	})
+	for _, tc := range testCases {
+		tc := tc
+		t.Run(tc.desc, func(t *testing.T) {
+			t.Parallel()
+			got := findMaxConsecutiveOnes(tc.nums)
+			assertEquals(t, tc.want, got)
+		})
+	}
 }
 
 func assertEquals(t testing.TB, want, got int) {
