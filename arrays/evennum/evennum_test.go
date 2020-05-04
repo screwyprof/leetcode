@@ -31,6 +31,9 @@ func TestDigits(t *testing.T) {
 		want int
 	}{
 		{desc: "0 given, 0 returned", num: 0, want: 1},
+		{desc: "1 given, 1 returned", num: 1, want: 1},
+		{desc: "27 given, 2 returned", num: 27, want: 2},
+		{desc: "115 given, 3 returned", num: 115, want: 3},
 	}
 
 	for _, tc := range testCases {

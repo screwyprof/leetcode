@@ -5,6 +5,14 @@ func findNumbers(nums []int) int {
 	return 0
 }
 
-func digits(num int) int {
-	return 1
+func digits(n int) int {
+	if n == 0 {
+		return 1
+	}
+	var count int
+	for n != 0 {
+		n /= 10
+		count++
+	}
+	return count
 }
