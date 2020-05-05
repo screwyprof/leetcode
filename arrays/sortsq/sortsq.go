@@ -2,35 +2,19 @@ package sortsq
 
 func sortedSquares(a []int) []int {
 	n := len(a)
-	j := 0
+	l, r := 0, n-1
+	pos, res := n-1, make([]int, n)
 
-	for j < n && a[j] < 0 {
-		j++
-	}
-
-	i := j - 1
-
-	res := make([]int, 0, len(a))
-	for 0 <= i && j < n {
-		nEl := a[i] * a[i]
-		pEl := a[j] * a[j]
-		if nEl < pEl {
-			res = append(res, nEl)
-			i -= 1
+	for l <= r {
+		if a[l]*-1 > a[r] {
+			res[pos] = a[l] * a[l]
+			l++
 		} else {
-			res = append(res, pEl)
-			j += 1
+			res[pos] = a[r] * a[r]
+			r--
 		}
-	}
 
-	for i >= 0 {
-		res = append(res, a[i]*a[i])
-		i -= 1
-	}
-
-	for j < n {
-		res = append(res, a[j]*a[j])
-		j += 1
+		pos--
 	}
 
 	return res
