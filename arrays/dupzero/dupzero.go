@@ -8,11 +8,12 @@ func duplicateZeros(arr []int) {
 		return
 	}
 
-	for i, x := range arr {
-		if x == 0 {
-			if i + 1 < n {
+	for i := 0; i < n; i++ {
+		if arr[i] == 0 {
+			if i+1 < n {
 				arr[i+1] = 0
 			}
+			i++
 		}
 	}
 }
