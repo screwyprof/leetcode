@@ -3,9 +3,8 @@ package sortsq
 func sortedSquares(a []int) []int {
 	n := len(a)
 	l, r := 0, n-1
-	pos, res := n-1, make([]int, n)
-
-	for l <= r {
+	res := make([]int, n)
+	for pos := n - 1; pos >= 0; pos-- {
 		if a[l]*-1 > a[r] {
 			res[pos] = a[l] * a[l]
 			l++
@@ -13,8 +12,6 @@ func sortedSquares(a []int) []int {
 			res[pos] = a[r] * a[r]
 			r--
 		}
-
-		pos--
 	}
 
 	return res
