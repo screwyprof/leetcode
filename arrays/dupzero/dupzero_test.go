@@ -18,6 +18,7 @@ func TestDuplicateZeros(t *testing.T) {
 		{"only zero elements given, nothing done", []int{0, 0, 0}, []int{0, 0, 0}},
 		{"non zero elements given, nothing done", []int{42, 27, 100}, []int{42, 27, 100}},
 		{"two elements, last zero given, nothing done", []int{42, 0}, []int{42, 0}},
+		{"two elements, first zero, second overwritten with zero", []int{0, 42}, []int{0, 0}},
 	}
 
 	for _, tc := range testCases {
