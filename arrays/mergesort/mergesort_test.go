@@ -16,11 +16,19 @@ func TestMerge(t *testing.T) {
 	}{
 		{
 			desc:  "num1 and num 2 with the same one element, two elements merged",
-			nums1: []int{7,0},
+			nums1: []int{7, 0},
 			nums2: []int{7},
 			m:     2,
 			n:     1,
 			want:  []int{7, 7},
+		},
+		{
+			desc:  "num1 with one element, num2 with one element, num2's element is bigger, elements merged",
+			nums1: []int{7, 0},
+			nums2: []int{42},
+			m:     2,
+			n:     1,
+			want:  []int{7, 42},
 		},
 	}
 
