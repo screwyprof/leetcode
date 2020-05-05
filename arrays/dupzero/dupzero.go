@@ -10,10 +10,17 @@ func duplicateZeros(arr []int) {
 
 	for i := 0; i < n; i++ {
 		if arr[i] == 0 {
-			if i+1 < n {
-				arr[i+1] = 0
-			}
+			insertAndShiftRight(arr, i, 0)
 			i++
 		}
 	}
+}
+
+func insertAndShiftRight(arr []int, idx int, value int) {
+	if idx+1 > len(arr) {
+		return
+	}
+
+	copy(arr[idx+1:], arr[idx:])
+	arr[idx] = value
 }
