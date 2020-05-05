@@ -1,26 +1,28 @@
 package mergesort
 
-import "github.com/davecgh/go-spew/spew"
-
 // merge merges nums2 into nums1 as one sorted array.
 // The number of elements initialized in nums1 and nums2 are m and n respectively.
 // You may assume that nums1 has enough space (size that is greater or equal to m + n)
 // to hold additional elements from nums2.
 func merge(nums1 []int, m int, nums2 []int, n int) {
-	res := make([]int, m+n)
-
-	spew.Dump(nums1[:m])
-	spew.Dump(nums2)
-	for i := 0; i < n; i++ {
-		if nums1[i] > nums2[i] {
-			res[i] = nums2[i]
-			res[i+1] = nums1[i]
+	cnt := m + n - 1
+	m--
+	n--
+	for m >= 0 && n >= 0 {
+		if nums1[m] > nums2[n] {
+			nums1[cnt] = nums1[m]
+			cnt--
+			m--
 		} else {
-			res[i] = nums1[i]
-			res[i+1] = nums2[i]
+			nums1[cnt] = nums2[n]
+			cnt--
+			n--
 		}
 	}
 
-	spew.Dump(res)
-	copy(nums1[:], res[:])
+	for n >= 0 {
+		nums1[cnt] = nums2[n]
+		cnt--
+		n--
+	}
 }

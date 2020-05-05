@@ -38,6 +38,14 @@ func TestMerge(t *testing.T) {
 			n:     1,
 			want:  []int{7, 42},
 		},
+		{
+			desc:  "arbitrary arrays given, elements merged",
+			nums1: []int{1, 2, 3, 0, 0, 0},
+			nums2: []int{2, 5, 6},
+			m:     3,
+			n:     3,
+			want:  []int{1, 2, 2, 3, 5, 6},
+		},
 	}
 
 	for _, tc := range testCases {
