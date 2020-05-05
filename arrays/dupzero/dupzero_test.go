@@ -11,8 +11,9 @@ func TestDuplicateZeros(t *testing.T) {
 		arr  []int
 		want []int
 	}{
-		{desc: "nil slice given, 0 returned", arr: nil, want: nil},
-		{desc: "empty slice given, 0 returned", arr: []int{}, want: []int{}},
+		{"nil slice given, nothing done", nil, nil},
+		{"empty slice given, nothing done", []int{}, []int{}},
+		{"one zero element given, nothing done", []int{0}, []int{0}},
 	}
 
 	for _, tc := range testCases {
