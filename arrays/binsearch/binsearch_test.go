@@ -11,6 +11,7 @@ func TestSearch(t *testing.T) {
 	}{
 		{"nil slice given, not found", nil, 42, -1},
 		{"empty slice given, not found", []int{}, 7, -1},
+		{"odd array given, not found", []int{0, 2, 4, 6, 8, 10, 12, 14, 16}, 42, -1},
 	}
 
 	for _, tc := range testCases {
