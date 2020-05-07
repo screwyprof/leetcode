@@ -14,6 +14,7 @@ func TestSearch(t *testing.T) {
 		{"odd array given, not found", []int{0, 2, 4, 6, 8, 10, 12, 14, 16}, 42, -1},
 		{"even array given, not found", []int{0, 2, 4, 6, 8, 10, 12, 14, 16, 18}, 42, -1},
 		{"element found at the beginning", []int{0, 2, 4, 6, 8, 10, 12, 14, 16, 18}, 0, 0},
+		{"element found at the end", []int{0, 2, 4, 6, 8, 10, 12, 14, 16, 18}, 18, 9},
 	}
 
 	for _, tc := range testCases {
