@@ -9,8 +9,9 @@ func TestRemoveElement(t *testing.T) {
 		val  int
 		want int
 	}{
-		{desc: "nil slice given, 0 returned", nums: nil, want: 0},
-		{desc: "empty slice given, 0 returned", nums: []int{}, want: 0},
+		{"nil slice given, 0 returned", nil, 0, 0},
+		{"empty slice given, 0 returned", []int{}, 0, 0},
+		{"val not found, nothing changed", []int{1, 2, 3}, 0, 3},
 	}
 
 	for _, tc := range testCases {
