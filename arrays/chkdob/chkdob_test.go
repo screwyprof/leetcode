@@ -15,6 +15,7 @@ func TestCheckIfExist(t *testing.T) {
 		{"arbitrary elements given, not found", []int{3, 1, 7, 11}, false},
 		{"two elements given, the double comes first, found", []int{84, 42}, true},
 		{"two elements given, the double comes last, found", []int{42, 84}, true},
+		{"a few elements given, the double comes before the value, found", []int{10, 2, 5, 3}, true},
 	}
 
 	for _, tc := range testCases {
