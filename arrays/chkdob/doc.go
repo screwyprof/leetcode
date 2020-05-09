@@ -22,4 +22,10 @@
 //   Input: arr = [3,1,7,11]
 //   Output: false
 //   Explanation: In this case does not exist N and M, such that N = 2 * M.
+//
+// Hint 1:
+//   Loop from i = 0 to arr.length, maintaining in a hashTable the array elements from [0, i - 1].
+//
+// Hint 2:
+//   On each step of the loop check if we have seen the element 2 * arr[i] or arr[i] / 2 was seen if arr[i] % 2 == 0.
 package chkdup
