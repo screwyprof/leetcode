@@ -21,5 +21,9 @@ func validMountainArray(arr []int) bool {
 			return false
 		}
 	}
+
+	if !peakReached {
+		return false
+	}
 	return true
 }

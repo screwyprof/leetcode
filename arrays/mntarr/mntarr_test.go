@@ -13,6 +13,7 @@ func TestCheckIfExist(t *testing.T) {
 		{"less than three elements given, false returned", []int{27, 42}, false},
 		{"two same elements in a row given, false returned", []int{7, 12, 12}, false},
 		{"valid mountain array given, true returned", []int{0, 3, 2, 1}, true},
+		{"monotonically ascending array given, false returned", []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, false},
 	}
 
 	for _, tc := range testCases {
