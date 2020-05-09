@@ -18,6 +18,7 @@ func TestCheckIfExist(t *testing.T) {
 		{"two elements given, the double comes last, found", []int{42, 84}, true},
 		{"a few elements given, the double comes before the value, found", []int{10, 2, 5, 3}, true},
 		{"a few elements given, the double comes after the value, found", []int{7, 1, 14, 11}, true},
+		{"a few elements with one zero among them given, not found", []int{-2, 0, 10, -19, 4, 6, -8}, false},
 	}
 
 	for _, tc := range testCases {
