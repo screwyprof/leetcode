@@ -6,6 +6,7 @@ func checkIfExist(arr []int) bool {
 		if hash[v*2] != nil {
 			return true
 		}
+		// &1 == %2, >>1 = /2
 		if v&1 == 0 && hash[v>>1] != nil {
 			return true
 		}
