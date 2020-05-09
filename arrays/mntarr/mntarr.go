@@ -6,18 +6,24 @@ func validMountainArray(arr []int) bool {
 	}
 
 	var peakReached bool
+	var asc bool
 	for i := 0; i < len(arr)-1; i++ {
 		if arr[i] == arr[i+1] {
 			return false
 		}
 
 		if !peakReached && arr[i] < arr[i+1] {
+			asc = true
 			continue
-		} else {
-			peakReached = true
 		}
 
-		if peakReached && arr[i] <= arr[i+1] {
+		peakReached = true
+
+		if !asc {
+			return false
+		}
+
+		if arr[i] <= arr[i+1] {
 			return false
 		}
 	}
@@ -25,5 +31,6 @@ func validMountainArray(arr []int) bool {
 	if !peakReached {
 		return false
 	}
+
 	return true
 }
