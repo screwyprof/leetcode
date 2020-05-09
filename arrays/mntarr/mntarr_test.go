@@ -8,10 +8,11 @@ func TestCheckIfExist(t *testing.T) {
 		arr  []int
 		want bool
 	}{
-		{"nil slice given, not valid", nil, false},
-		{"empty slice given, not valid", []int{}, false},
-		{"less than three elements given, not valid", []int{27, 42}, false},
-		{"two same elements in a row given, not valid", []int{7, 12, 12}, false},
+		{"nil slice given, false returned", nil, false},
+		{"empty slice given, false returned", []int{}, false},
+		{"less than three elements given, false returned", []int{27, 42}, false},
+		{"two same elements in a row given, false returned", []int{7, 12, 12}, false},
+		{"valid mountain array given, true returned", []int{0, 3, 2, 1}, true},
 	}
 
 	for _, tc := range testCases {
