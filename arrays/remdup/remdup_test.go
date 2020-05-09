@@ -14,6 +14,7 @@ func TestRemoveDuplicates(t *testing.T) {
 	}{
 		{"nil slice given, 0 returned", nil, 0, nil},
 		{"empty slice given, 0 returned", []int{}, 0, []int{}},
+		{"one element given, 1 returned, nothing changed", []int{27}, 1, []int{27}},
 	}
 
 	for _, tc := range testCases {

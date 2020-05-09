@@ -1,5 +1,5 @@
 package remdup
 
 func removeDuplicates(nums []int) int {
-	return 0
+	return len(nums)
 }
