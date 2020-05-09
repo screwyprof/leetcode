@@ -18,6 +18,7 @@ func TestRemoveDuplicates(t *testing.T) {
 		{"no duplicates given, nothing changed, original length returned", []int{27, 12, 42}, 3, []int{27, 12, 42}},
 		{"one duplicate at the beginning given, duplicate removed, length changed", []int{27, 27, 42}, 2, []int{27, 42}},
 		{"tree duplicates at the beginning given, duplicates removed, length changed", []int{27, 27, 27, 27, 42}, 2, []int{27, 42}},
+		{"one duplicate at the end given, duplicate removed, length changed", []int{27, 42, 42}, 2, []int{27, 42}},
 	}
 
 	for _, tc := range testCases {
