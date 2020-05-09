@@ -12,6 +12,7 @@ func TestCheckIfExist(t *testing.T) {
 		{"empty slice given, not found", []int{}, false},
 		{"one element given, not found", []int{27}, false},
 		{"two elements given, not found", []int{27, 42}, false},
+		{"arbitrary elements given, not found", []int{3,1,7,11}, false},
 	}
 
 	for _, tc := range testCases {
