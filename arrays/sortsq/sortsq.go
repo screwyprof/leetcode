@@ -18,3 +18,20 @@ func sortedSquares(a []int) []int {
 
 	return res
 }
+
+// sortedSquares returns an array of the squares of each number in sorted non-decreasing order.
+// It sorts elements in place.
+// a is expected to be sorted in non-decreasing order.
+func sortedSquares2(a []int) []int {
+	for i := 0; i < len(a); i++ {
+		a[i] = a[i] * a[i]
+		key := a[i]
+		j := i - 1
+		for j >= 0 && a[j] > key {
+			a[j+1] = a[j]
+			j--
+		}
+		a[j+1] = key
+	}
+	return a
+}

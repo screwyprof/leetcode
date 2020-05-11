@@ -26,4 +26,20 @@ func assertEqual(t testing.TB, want, got []int) {
 	}
 }
 
-//-4,-1,0,3,10
+var result []int
+
+func BenchmarkSortedSquares(b *testing.B) {
+	var res []int
+	for i := 0; i < b.N; i++ {
+		res = sortedSquares([]int{-7, -3, 2, 3, 11})
+	}
+	result = res
+}
+
+func BenchmarkSortedSquares2(b *testing.B) {
+	var res []int
+	for i := 0; i < b.N; i++ {
+		res = sortedSquares2([]int{-7, -3, 2, 3, 11})
+	}
+	result = res
+}
