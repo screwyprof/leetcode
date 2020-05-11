@@ -15,6 +15,7 @@ func TestMoveZeroes(t *testing.T) {
 		{"empty slice given, nothing done", []int{}, []int{}},
 		{"one zero element given, nothing done", []int{0}, []int{0}},
 		{"one non-zero element given, nothing done", []int{42}, []int{42}},
+		{"arbitrary non-zero elements given, nothing done", []int{42, 27, 30}, []int{42, 27, 30}},
 	}
 
 	for _, tc := range testCases {
