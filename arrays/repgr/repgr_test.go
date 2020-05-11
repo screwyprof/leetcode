@@ -13,6 +13,7 @@ func TestReplaceElements(t *testing.T) {
 	}{
 		{"nil slice given, nothing done", nil, nil},
 		{"empty slice given, nothing done", []int{}, []int{}},
+		{"one element given, [-1] returned", []int{42}, []int{-1}},
 	}
 
 	for _, tc := range testCases {
