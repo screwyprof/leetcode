@@ -13,6 +13,7 @@ func TestMoveZeroes(t *testing.T) {
 	}{
 		{"nil slice given, nothing done", nil, nil},
 		{"empty slice given, nothing done", []int{}, []int{}},
+		{"one zero element given, nothing done", []int{0}, []int{0}},
 	}
 
 	for _, tc := range testCases {
