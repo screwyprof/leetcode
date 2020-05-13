@@ -18,6 +18,7 @@ func TestSortArrayByParity(t *testing.T) {
 		{"only odd elements given, nothing done", []int{1, 7, 27}, []int{1, 7, 27}},
 		{"even elements followed by odd elements given, nothing done", []int{42, 30, 1, 7}, []int{42, 30, 1, 7}},
 		{"an odd element followed by an even given, elements swapped", []int{7, 42}, []int{42, 7}},
+		{"arbitrary array with odd and even elements given, elements rearranged", []int{3, 1, 2, 4}, []int{2, 4, 3, 1}},
 	}
 
 	for _, tc := range testCases {
