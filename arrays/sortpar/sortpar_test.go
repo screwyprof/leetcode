@@ -14,6 +14,7 @@ func TestSortArrayByParity(t *testing.T) {
 		{"nil slice given, nothing done", nil, nil},
 		{"empty slice given, nothing done", []int{}, []int{}},
 		{"one element given, nothing done", []int{0}, []int{0}},
+		{"all event elements given, nothing done", []int{0, 42, 30}, []int{0, 42, 30}},
 	}
 
 	for _, tc := range testCases {
