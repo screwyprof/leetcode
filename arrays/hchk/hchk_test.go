@@ -10,6 +10,7 @@ func TestHeightChecker(t *testing.T) {
 	}{
 		{"nil slice given, nothing done", nil, 0},
 		{"empty slice given, nothing done", []int{}, 0},
+		{"ordered elements given, nothing done", []int{1,2,3,4,5}, 0},
 	}
 
 	for _, tc := range testCases {
