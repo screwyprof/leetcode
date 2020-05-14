@@ -12,7 +12,8 @@ func TestHeightChecker(t *testing.T) {
 		{"empty slice given, nothing done", []int{}, 0},
 		{"ordered elements given, nothing done", []int{1, 2, 3, 4, 5}, 0},
 		{"two unordered elements given, array re-arranged", []int{2, 1}, 2},
-		{"arbitrary elements given, array re-arranged", []int{1,1,4,2,1,3}, 3},
+		{"all elements, but first are ordered, array re-arranged", []int{5, 1, 2, 3, 4}, 5},
+		{"arbitrary elements given, array re-arranged", []int{1, 1, 4, 2, 1, 3}, 3},
 	}
 
 	for _, tc := range testCases {
